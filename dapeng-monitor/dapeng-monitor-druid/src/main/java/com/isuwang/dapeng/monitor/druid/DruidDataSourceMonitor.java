@@ -1,11 +1,12 @@
 package com.github.dapeng.monitor.druid;
 
 import com.alibaba.druid.stat.DruidStatManagerFacade;
-import com.github.dapeng.core.IPUtils;
-import com.github.dapeng.core.SoaSystemEnvProperties;
-import com.github.dapeng.monitor.api.MonitorServiceClient;
-import com.github.dapeng.monitor.api.domain.DataSourceStat;
+
 import com.github.dapeng.org.apache.thrift.TException;
+import com.github.dapeng.soa.monitor.api.MonitorServiceClient;
+import com.github.dapeng.soa.monitor.api.domain.DataSourceStat;
+import com.github.dapeng.util.IPUtils;
+import com.github.dapeng.util.SoaSystemEnvProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

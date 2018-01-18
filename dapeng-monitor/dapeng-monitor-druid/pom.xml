@@ -31,7 +31,7 @@
 
         <dependency>
             <groupId>com.github.dapeng</groupId>
-            <artifactId>dapeng-remoting-netty</artifactId>
+            <artifactId>dapeng-client-netty</artifactId>
             <version>${project.version}</version>
         </dependency>
 
