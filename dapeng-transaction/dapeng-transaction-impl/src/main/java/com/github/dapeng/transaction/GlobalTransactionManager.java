@@ -261,22 +261,7 @@ public class GlobalTransactionManager {
         }
 
         //获取服务的ip和端口
-        JsonPost jsonPost = null;
-
-        String callerInfo = null;
-//        if (rollbackOrForward)
-//            callerInfo = LoadBalanceFilter.getCallerInfo(process.getServiceName(), process.getVersionName(), process.getRollbackMethodName());
-//        else
-//            callerInfo = LoadBalanceFilter.getCallerInfo(process.getServiceName(), process.getVersionName(), process.getMethodName());
-
-        if (callerInfo != null) {
-
-            String[] infos = callerInfo.split(":");
-            jsonPost = new JsonPost(infos[0], Integer.valueOf(infos[1]), false);
-
-        } else if ("local".equals(SoaSystemEnvProperties.SOA_REMOTING_MODE)) {
-            jsonPost = new JsonPost(SoaSystemEnvProperties.SOA_CONTAINER_IP, SoaSystemEnvProperties.SOA_CONTAINER_PORT, false);
-        }
+        JsonPost jsonPost = new JsonPost(process.getServiceName(), process.getVersionName());
 
         InvocationContext invocationContext = InvocationContextImpl.Factory.getCurrentInstance();
         invocationContext.setServiceName(process.getServiceName());

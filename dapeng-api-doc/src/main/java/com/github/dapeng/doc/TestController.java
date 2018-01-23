@@ -41,7 +41,7 @@ public class TestController {
     @Autowired
     private ServiceCache serviceCache;
 
-    private JsonPost jsonPost = new JsonPost(SoaSystemEnvProperties.SOA_CONTAINER_IP, SoaSystemEnvProperties.SOA_CONTAINER_PORT, true);
+    //private JsonPost jsonPost = new JsonPost(SoaSystemEnvProperties.SOA_CONTAINER_IP, SoaSystemEnvProperties.SOA_CONTAINER_PORT, true);
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
@@ -61,6 +61,8 @@ public class TestController {
         invocationCtx.setCallerFrom(Optional.of("JsonCaller"));
 
         fillInvocationCtx(invocationCtx, req);
+
+        JsonPost jsonPost = new JsonPost(serviceName,methodName);
 
         try {
             return jsonPost.callServiceMethod(invocationCtx, jsonParameter, service);

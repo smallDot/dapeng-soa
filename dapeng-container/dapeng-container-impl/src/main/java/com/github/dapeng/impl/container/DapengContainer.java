@@ -160,10 +160,10 @@ public class DapengContainer implements Container {
         registerPlugin(taskSchedulePlugin);
         registerPlugin(nettyPlugin);
 
-        if ("plugin".equals(RUN_MODE)) {
+        //if ("plugin".equals(RUN_MODE)) {
             Plugin apiDocPlugin = new ApiDocPlugin(this);
             registerPlugin(apiDocPlugin);
-        }
+        //}
 
         //4.启动Apploader， plugins
         getPlugins().forEach(Plugin::start);
