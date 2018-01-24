@@ -1,7 +1,7 @@
 package com.github.dapeng.client.netty;
 
 import com.github.dapeng.core.SoaConnection;
-import com.github.dapeng.json.SoaJsonConnectionImpl;
+import com.github.dapeng.util.SoaJsonConnectionImpl;
 
 import java.util.ArrayList;
 import java.util.List;

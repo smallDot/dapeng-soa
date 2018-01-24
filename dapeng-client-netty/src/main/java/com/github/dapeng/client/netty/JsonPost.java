@@ -1,16 +1,13 @@
-package com.github.dapeng.json;
+package com.github.dapeng.client.netty;
 
-import com.github.dapeng.client.netty.SoaConnectionImpl;
-import com.github.dapeng.client.netty.TSoaTransport;
 import com.github.dapeng.core.InvocationContext;
 import com.github.dapeng.core.SoaConnectionPool;
 import com.github.dapeng.core.SoaConnectionPoolFactory;
 import com.github.dapeng.core.SoaException;
 import com.github.dapeng.core.metadata.Method;
 import com.github.dapeng.core.metadata.Service;
-import com.github.dapeng.org.apache.thrift.TException;
+import com.github.dapeng.json.JsonSerializer;
 import com.github.dapeng.util.SoaSystemEnvProperties;
-import com.google.gson.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

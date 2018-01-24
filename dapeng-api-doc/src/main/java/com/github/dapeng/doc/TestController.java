@@ -1,10 +1,10 @@
 package com.github.dapeng.doc;
 
+import com.github.dapeng.client.netty.JsonPost;
 import com.github.dapeng.core.InvocationContext;
 import com.github.dapeng.core.InvocationContextImpl;
 import com.github.dapeng.core.metadata.Service;
 import com.github.dapeng.doc.cache.ServiceCache;
-import com.github.dapeng.json.JsonPost;
 import com.github.dapeng.util.SoaSystemEnvProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
