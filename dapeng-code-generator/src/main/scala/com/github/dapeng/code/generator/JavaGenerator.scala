@@ -22,7 +22,11 @@ class JavaGenerator extends CodeGenerator {
   override def generate(services: util.List[Service], outDir: String): Unit = {}
 
   private def rootDir(rootDir: String, packageName: String): File = {
-    val dir = rootDir + "/java/" + packageName.replaceAll("[.]", "/")
+    val dir = if (rootDir.contains("src_managed")) {
+      rootDir + "/" + packageName.replaceAll("[.]", "/")
+    } else {
+      rootDir + "/java/" + packageName.replaceAll("[.]", "/")
+    }
 
     val file = new File(dir)
 
@@ -33,12 +37,16 @@ class JavaGenerator extends CodeGenerator {
   }
 
   private def resourceDir(rootDir: String, packageName: String): String = {
-    val dir = rootDir + "/resources/"
+    val dir = if (rootDir.contains("src_managed")) {
+      rootDir.replace("src_managed","resource_managed")
+    } else {
+      rootDir + "/resources/"
+    }
 
     val file = new File(dir)
 
     if(!file.exists()){}
-      file.mkdirs()
+    file.mkdirs()
 
     dir
   }
